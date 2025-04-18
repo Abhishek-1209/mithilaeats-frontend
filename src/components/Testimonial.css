@@ -1,0 +1,51 @@
+.testimonial {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.quote-icon {
+  font-size: 24px;
+  color: #ff7b00;
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  font-size: 16px;
+  font-style: italic;
+  color: #555;
+}
+
+.customer {
+  margin-top: 15px;
+}
+
+.customer img {
+  width: 80px;  /* Set a fixed size */
+  height: 80px; /* Make width and height equal */
+  border-radius: 50%; /* Make it circular */
+  object-fit: cover; /* Ensures the image is properly cropped */
+  border: 3px solid #ff7b00; /* Optional border */
+}
+
+.customer h4 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}

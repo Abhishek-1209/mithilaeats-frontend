@@ -1,0 +1,276 @@
+/* General Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c99d4a;
+  padding: 10px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+  z-index: 1000;
+  position: relative;
+}
+
+/* Logo & Heading */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 70px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.logo-container h1 {
+  font-family: 'Marcellus', serif;
+  font-size: 1.6rem;
+  margin-left: 0.4rem;
+  transition: color 0.3s ease;
+  letter-spacing: 1px;
+  color: white;
+}
+
+/* Nav List */
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
+}
+
+/* Nav Items */
+.navbar ul li {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* Nav Links */
+.navbar ul li a {
+  color: white;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  background-color: transparent;
+  display: inline-block;
+}
+
+/* Hover Effects */
+.navbar ul li:hover a {
+  color: rgba(242, 192, 11, 0.997);
+  transform: scale(1.25);
+}
+
+/* Cart Icon Inside <ul> */
+.navbar ul li.cart-icon {
+  position: relative;
+}
+
+/* Cart Link */
+.cart-link {
+  font-size: 1.4rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.cart-link:hover {
+  color: yellow;
+}
+
+/* Cart Count Badge */
+.cart-count {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  transform: translate(30%, -40%);
+  background: #ffcc00;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Sticky Navbar Base */
+.sticky-navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sticky-navbar.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sticky-navbar.scrolled ul li a,
+.sticky-navbar.scrolled .logo-container h1 {
+  color: black;
+}
+
+/* Static Navbar */
+.static-navbar {
+  background-color: white;
+  padding: 1rem 2rem;
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.static-navbar ul li a,
+.static-navbar .logo-container h1 {
+  color: black;
+}
+
+/* =====================
+   Mobile & Responsive
+===================== */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1100;
+  background: none;
+  border: none;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobile-cart-icon {
+  display: none;
+  position: relative;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.right-icons {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+  .logo-container {
+    order: 1;
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .right-icons {
+    order: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+  .cart-count{
+    top: 10px;
+    right: 12px;
+  transform: translate(30%, -40%);
+  background: #ffcc00;
+  color: white;
+  font-size: 8px;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+  }
+  .mobile-cart-icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+    color: white;
+  }
+
+  /* Hide Nav List Initially */
+  .navbar ul {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    width: 100vw; /* Full viewport width */
+    background-color: #f9f9f9;
+    margin: 0; /* Remove margin */
+    padding: 10px 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    border-radius: 0; /* Optional: remove radius for edge-to-edge look */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
+    z-index: 999; /* Make sure it's above other content */
+  }
+
+  /* Show When Toggle is Active */
+  .navbar ul.mobile-nav-toggle {
+    max-height:300px; /* Limited height */
+    opacity:5;
+    overflow-y: auto;
+  }
+
+  .navbar ul li {
+    margin: 0.3rem 0.5rem;
+  }
+
+  .navbar ul li a {
+    color: #333;
+  }
+
+  .navbar ul li.cart-icon {
+    display: none;
+  }
+
+  .logo-container h1 {
+    font-size: 1.3rem;
+  }
+
+  .logo {
+    width: 45px;
+  }
+}
+/* Fix: Always show icons in black on non-home pages */
+.static-navbar .right-icons .cart-link,
+.static-navbar .right-icons .menu-toggle {
+  color: black !important;
+}
