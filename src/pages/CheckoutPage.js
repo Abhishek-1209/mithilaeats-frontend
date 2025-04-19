@@ -29,7 +29,7 @@ const CheckoutPage = () => {
     }
 
     try {
-      const response = await fetch("https://mithilaeats-backend-production.up.railway.app/", {
+      const response = await fetch("https://mithilaeats-backend-production.up.railway.app/checkout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +45,8 @@ const CheckoutPage = () => {
       });
 
       const result = await response.json();
-
+      console.log("Response from backend:", result);
+      
       if (response.ok) {
         alert(`Order placed successfully!\nOrder ID: ${result.orderId}`);
         clearCart();
