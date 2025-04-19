@@ -36,7 +36,7 @@ const Navbar = () => {
     <nav className={`navbar ${isHomePage ? "sticky-navbar" : "static-navbar"} ${scrolled ? "scrolled" : ""}`}>
       {/* Left Side - Logo */}
       <div className="logo-container">
-        <img src="logo4.png" alt="Mithilaeats" className="logo" />
+        <img src="https://res.cloudinary.com/dz56xoyee/image/upload/v1745077288/Screenshot_2025-04-05_at_1.28.38_AM_vzimxf.png" alt="Mithilaeats" className="logo" />
         <h1>MithilaEats</h1>
       </div>
 
@@ -55,10 +55,7 @@ const Navbar = () => {
   style={{ color: scrolled ? "black" : "white" }} >
   {menuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
 </div>
-
 </div>
-
-
       {/* Nav List */}
       <ul className={`nav-menu ${menuOpen ? "mobile-nav-toggle" : ""}`}>
           <li><Link to="/">Home</Link></li>

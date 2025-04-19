@@ -29,8 +29,6 @@ const products = [
     name: "Cow Ghee Roasted Makhana",
     price: 200 ,
     image: `https://m.media-amazon.com/images/I/51vXbe20-cL.jpg`,
-    description: "Premium makhana roasted in pure cow ghee.",
-    nutrition: "Good for digestion, full of healthy fats."
   },
 ];
 
@@ -77,10 +75,9 @@ const Products = () => {
     </button>
   )}
 </div>
-
-          );
-        })}
-      </div>
+ );
+})}
+   </div>
       {/* Toast Container (Placed at Root Level) */}
       <ToastContainer />
     </section>

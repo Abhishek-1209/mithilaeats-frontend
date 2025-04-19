@@ -9,7 +9,6 @@ const images = [
   "https://m.media-amazon.com/images/I/51vXbe20-cL.jpg",
    "/assets/package.jpg",
 ];
-
 const variants = {
   enter: (direction) => ({
     x: direction > 0 ? 1000 : -1000,
