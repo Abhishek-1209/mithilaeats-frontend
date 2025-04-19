@@ -13,6 +13,7 @@ import AboutUs from './pages/AboutUs';
 import ProductDetails from "./pages/ProductDetails";
 import WhyUs from './components/WhyUs';
 import CartProvider from "./context/CartContext";
+import NotFound from "./components/NotFound";
 function App() {
   return (
     <CartProvider>
@@ -26,6 +27,7 @@ function App() {
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Testimonial/>
       <WhyUs/>

@@ -4,6 +4,7 @@ import "./Products.css";
 import { CartContext } from "../context/CartContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet";
 
 const products = [
   {
@@ -27,7 +28,7 @@ const products = [
   {
     id: 4,
     name: "Cow Ghee Roasted Makhana",
-    price: 200 ,
+    price: 200,
     image: `https://m.media-amazon.com/images/I/51vXbe20-cL.jpg`,
   },
 ];
@@ -50,6 +51,22 @@ const Products = () => {
 
   return (
     <section className="products">
+      <Helmet>
+        <title>Our Products | MithilaEats</title>
+        <meta
+          name="description"
+          content="Browse our premium collection of roasted makhanas – classic, peri peri, tandoori, and more!"
+        />
+        <meta property="og:title" content="Our Products | MithilaEats" />
+        <meta
+          property="og:description"
+          content="Browse our premium collection of roasted makhanas – classic, peri peri, tandoori, and more!"
+        />
+        <meta property="og:image" content="https://mithilaeats.com/assets/og-cover.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mithilaeats.com/products" />
+      </Helmet>
+
       <h2>Our Premium Makhanas</h2>
       <div className="product-container">
         {products.map((product) => {
@@ -57,28 +74,27 @@ const Products = () => {
 
           return (
             <div className="product-card" key={product.id}>
-  <Link to={`/product/${product.id}`} className="product-link">
-    <img src={product.image} alt={product.name} className="product-img" />
-    <h3>{product.name}</h3>
-  </Link>
-  <p className="price">₹{product.price}</p>
+              <Link to={`/product/${product.id}`} className="product-link">
+                <img src={product.image} alt={product.name} className="product-img" />
+                <h3>{product.name}</h3>
+              </Link>
+              <p className="price">₹{product.price}</p>
 
-  {cartItem ? (
-    <div className="quantity-controls">
-      <button onClick={() => removeFromCart(product.id)}>-</button>
-      <span>{cartItem.quantity}</span>
-      <button onClick={() => increaseQuantity(product.id)}>+</button>
-    </div>
-  ) : (
-    <button className="btn btn-primary" onClick={() => handleAddToCart(product)}>
-      Add to Cart
-    </button>
-  )}
-</div>
- );
-})}
-   </div>
-      {/* Toast Container (Placed at Root Level) */}
+              {cartItem ? (
+                <div className="quantity-controls">
+                  <button onClick={() => removeFromCart(product.id)}>-</button>
+                  <span>{cartItem.quantity}</span>
+                  <button onClick={() => increaseQuantity(product.id)}>+</button>
+                </div>
+              ) : (
+                <button className="btn btn-primary" onClick={() => handleAddToCart(product)}>
+                  Add to Cart
+                </button>
+              )}
+            </div>
+          );
+        })}
+      </div>
       <ToastContainer />
     </section>
   );
