@@ -52,9 +52,11 @@ const ProductDetail = () => {
   const handleAddToCart = () => {
     const selectedProduct = {
       ...product,
+      id: `${product.id}-${selectedSize}`, // Make unique ID per size
       price: product.price[selectedSize],
       size: selectedSize,
     };
+    
 
     addToCart(selectedProduct);
     toast.success(`${product.name} (${selectedSize}) added to cart!`, {
