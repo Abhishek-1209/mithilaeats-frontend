@@ -29,7 +29,7 @@ const CheckoutPage = () => {
     }
 
     try {
-      const response = await fetch("https://mithilaeats-backend.onrender.com", {
+      const response = await fetch("https://mithilaeats-backend.onrender.com/checkout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
