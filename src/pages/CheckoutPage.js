@@ -29,7 +29,7 @@ const CheckoutPage = () => {
     }
 
     try {
-      const response = await fetch("https://mithilaeats-backend-production.up.railway.app/checkout", {
+      const response = await fetch("https://mithilaeats-backend.onrender.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
