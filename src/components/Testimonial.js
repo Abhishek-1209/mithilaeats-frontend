@@ -14,9 +14,9 @@ const testimonials = [
     image: `${process.env.PUBLIC_URL}/assets/customer2.jpg`,
   },
   {
-    name: "Amisha",
+    name: "Dalmil",
     text: "Premium quality and great packaging. Highly recommended, just because of Abhishek",
-    image: `${process.env.PUBLIC_URL}/assets/customer4.jpg`,
+    image: `${process.env.PUBLIC_URL}/assets/customer3.jpg`,
   },
 ];
 
